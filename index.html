@@ -1,67 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physician Imaging Order Demo</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        #testOptions { display: none; }
-    </style>
+    <title>
+Weison is the best
+    </title>
+    <body>
+        <h1>Please extend consultation deadline!</h1>
+        <p>idk</p>
+        <h2>We need more time</h2><br/>
+        <img src="husky.jpg" width="400px">
+    </body>
 </head>
-<body>
-
-    <h1>Order Diagnostic Imaging Tests</h1>
-
-    <p>Select a patient:</p>
-    <select id="patientSelect">
-        <option value="patient1">Patient 1</option>
-        <option value="patient2">Patient 2</option>
-    </select>
-
-    <p>Select the imaging modality:</p>
-    <select id="modalitySelect">
-        <option value="xray">X-Ray</option>
-        <option value="ultrasound">Ultrasound</option>
-        <option value="nuclear">Nuclear Medicine</option>
-    </select>
-
-    <p>Click on the body part:</p>
-    <img src="https://cdn-degmb.nitrocdn.com/ttfRdoaCkYdYriFDAQYzsXWjIyYFFwdP/assets/images/optimized/rev-de420d5/3dmusclelab.com/wp-content/uploads/2019/02/anatomical-position.jpg" usemap="#anatomyMap" alt="Anatomical Figure" width="400">
-
-    <map name="anatomyMap">
-        <area shape="rect" coords="100,50,200,150" alt="Head" onclick="selectBodyPart('head')">
-        <area shape="rect" coords="150,200,250,300" alt="Chest" onclick="selectBodyPart('chest')">
-    </map>
-
-    <div id="testOptions">
-        <p>Select test:</p>
-        <select id="testSelect"></select>
-        <br><br>
-        <button onclick="submitOrder()">Submit Order</button>
-    </div>
-
-    <script>
-        function selectBodyPart(part) {
-            let modality = document.getElementById("modalitySelect").value;
-            let testSelect = document.getElementById("testSelect");
-            testSelect.innerHTML = "";  // Clear previous options
-
-            if (part === 'head' && modality === 'xray') {
-                testSelect.innerHTML += "<option value='skullXray'>Skull X-Ray</option>";
-            } else if (part === 'chest' && modality === 'ultrasound') {
-                testSelect.innerHTML += "<option value='chestUltrasound'>Chest Ultrasound</option>";
-            }
-
-            document.getElementById("testOptions").style.display = "block";  // Show test options
-        }
-
-        function submitOrder() {
-            let patient = document.getElementById("patientSelect").value;
-            let test = document.getElementById("testSelect").value;
-            alert(`Order submitted for ${patient}: ${test}`);
-        }
-    </script>
-
-</body>
 </html>
